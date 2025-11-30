@@ -27,6 +27,11 @@
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>com.xie</groupId>
+            <artifactId>tm-framework</artifactId>
+        </dependency>
     </dependencies>
 
 </project>

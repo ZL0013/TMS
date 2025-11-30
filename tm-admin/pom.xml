@@ -26,11 +26,6 @@
 
         <dependency>
             <groupId>com.xie</groupId>
-            <artifactId>tm-common</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>com.xie</groupId>
             <artifactId>tm-system</artifactId>
         </dependency>
     </dependencies>

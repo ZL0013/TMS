@@ -12,7 +12,7 @@ public enum ErrorCode {
     // 通用状态码
     SUCCESS(200, "成功"),
     FAILED(500, "失败"),
-
+    // TODO: 添加其他状态码
     // 用户模块状态码 1 + 00 + xx
     PARAM_ERROR(10001, "请求参数错误"),
     UNAUTHORIZED(10002, "用户未授权"),
