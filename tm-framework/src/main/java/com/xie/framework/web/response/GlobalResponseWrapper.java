@@ -1,4 +1,4 @@
-package com.xie.core.response;
+package com.xie.framework.web.response;
 
 import com.xie.core.result.Result;
 import org.springframework.core.MethodParameter;

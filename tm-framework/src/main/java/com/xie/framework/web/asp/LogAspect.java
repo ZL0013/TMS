@@ -1,4 +1,4 @@
-package com.xie.core.asp;
+package com.xie.framework.web.asp;
 
 import com.alibaba.fastjson2.JSON;
 import jakarta.servlet.http.HttpServletRequest;

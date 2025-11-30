@@ -21,7 +21,10 @@ public enum ErrorCode {
     USER_LOGIN_ERROR(10005, "用户登录失败"),
     USER_LOGOUT_ERROR(10006, "用户登出失败"),
     USER_LOGOUT_SUCCESS(10007, "用户登出成功"),
-    USER_NOT_LOGIN(10008, "用户未登录");
+    USER_NOT_LOGIN(10008, "用户未登录"),
+
+    // 兜底错误码
+    SERVER_ERROR(99999, "服务器错误");
 
     /**
      * 错误码

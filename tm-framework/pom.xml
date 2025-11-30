@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.xie</groupId>
-        <artifactId>TeachingManager</artifactId>
+        <artifactId>TMS</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
@@ -22,6 +22,12 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <!-- 通用工具模块 -->
+        <dependency>
+            <groupId>com.xie</groupId>
+            <artifactId>tm-common</artifactId>
         </dependency>
     </dependencies>
 </project>
