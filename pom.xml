@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.5.8</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+    <groupId>com.xie</groupId>
+    <artifactId>TeachingManager</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>TeachingManager</name>
+    <description>TeachingManager</description>
+    <modules>
+        <module>tm-admin</module>
+        <module>tm-common</module>
+        <module>tm-system</module>
+        <module>tm-framework</module>
+    </modules>
+
+    <properties>
+        <java.version>17</java.version>
+        <xie.version>0.0.1-SNAPSHOT</xie.version>
+        <spring-boot.version>3.5.8</spring-boot.version>
+        <mybatis-plus.version>3.5.14</mybatis-plus.version>
+        <lombok.version>1.18.38</lombok.version>
+        <postgresql.version>42.7.3</postgresql.version>
+        <slf4j.version>2.0.17</slf4j.version>
+        <jakarta.version>6.0.0</jakarta.version>
+        <fastjson.version>2.0.57</fastjson.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- Spring Boot 相关依赖 -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!-- Jakarta Servlet API -->
+            <dependency>
+                <groupId>jakarta.servlet</groupId>
+                <artifactId>jakarta.servlet-api</artifactId>
+                <version>${jakarta.version}</version>
+            </dependency>
+
+            <!-- JSON 处理库 -->
+            <dependency>
+                <groupId>com.alibaba.fastjson2</groupId>
+                <artifactId>fastjson2</artifactId>
+                <version>${fastjson.version}</version>
+            </dependency>
+
+            <!-- MyBatis Plus 相关依赖 -->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-spring-boot3-starter</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+
+            <!-- PostgreSQL 数据库驱动 -->
+            <dependency>
+                <groupId>org.postgresql</groupId>
+                <artifactId>postgresql</artifactId>
+                <version>${postgresql.version}</version>
+            </dependency>
+
+            <!-- Lombok 注解处理 -->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
+
+            <!-- SLF4J 日志框架 -->
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>${slf4j.version}</version>
+            </dependency>
+
+            <!-- 自定义模块依赖 -->
+            <dependency>
+                <groupId>com.xie</groupId>
+                <artifactId>tm-common</artifactId>
+                <version>${xie.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.xie</groupId>
+                <artifactId>tm-framework</artifactId>
+                <version>${xie.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.xie</groupId>
+                <artifactId>tm-system</artifactId>
+                <version>${xie.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <annotationProcessorPaths>
+                        <path>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                        </path>
+                    </annotationProcessorPaths>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <excludes>
+                        <exclude>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                        </exclude>
+                    </excludes>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
