@@ -1,7 +1,7 @@
 package com.xie.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.xie.entity.SysRole;
+import com.xie.model.entity.SysRole;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper

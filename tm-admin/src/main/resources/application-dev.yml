@@ -13,7 +13,19 @@ springdoc:
 # knife4j的增强配置，不需要增强可以不配
 knife4j:
   enable: true
+  # 关闭生产环境保护
+  production: false
+  # 开启基础认证（可选，如果需要密码保护可以开启）
+  basic:
+    enable: false
   setting:
     language: zh_cn
 server:
   port: 8888
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+logging:
+  level:
+    com.xie.framework.web.security: DEBUG
+    org.springframework.security: DEBUG

@@ -1,17 +1,15 @@
 package com.xie.web.controller;
 
-import com.xie.entity.SysMenu;
-import com.xie.entity.SysRole;
-import com.xie.entity.SysUser;
+import com.xie.model.entity.SysMenu;
+import com.xie.model.entity.SysRole;
+import com.xie.model.entity.SysUser;
 import com.xie.service.SysMenuService;
 import com.xie.service.SysRoleService;
 import com.xie.service.SysUserService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -41,6 +39,11 @@ public class TestController {
     @GetMapping("/user/list")
     public List<SysUser> getUserlist() {
         return sysUserService.list();
+    }
+
+    @GetMapping("/user/{id}")
+    public SysUser getUser(@PathVariable Long id) {
+        return sysUserService.getById(id);
     }
 
     @Operation(summary = "查询角色列表")

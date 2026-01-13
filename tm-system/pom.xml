@@ -28,6 +28,18 @@
             <artifactId>postgresql</artifactId>
         </dependency>
 
+        <!-- MapStruct 核心依赖 -->
+        <dependency>
+            <groupId>org.mapstruct</groupId>
+            <artifactId>mapstruct</artifactId>
+        </dependency>
+        <!-- Lombok-MapStruct 绑定 -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok-mapstruct-binding</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
         <dependency>
             <groupId>com.xie</groupId>
             <artifactId>tm-framework</artifactId>

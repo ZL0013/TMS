@@ -1,9 +1,9 @@
 package com.xie.framework.web.response;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.xie.core.result.ErrorCode;
 import com.xie.core.result.Result;
 import io.swagger.v3.oas.annotations.Hidden;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.MethodParameter;
 import org.springframework.http.MediaType;
 import org.springframework.http.server.ServerHttpRequest;
@@ -15,6 +15,7 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyAdvice;
  * 全局响应包装
  */
 @Hidden
+@Slf4j
 @RestControllerAdvice({"com.xie.web.controller"})
 public class GlobalResponseWrapper implements ResponseBodyAdvice<Object> {
 
@@ -50,7 +51,7 @@ public class GlobalResponseWrapper implements ResponseBodyAdvice<Object> {
             try {
                 return objectMapper.writeValueAsString(Result.success(body));
             } catch (Exception e) {
-                e.printStackTrace();
+                log.error("响应数据包装失败", e);
             }
         }
         return Result.success(body);

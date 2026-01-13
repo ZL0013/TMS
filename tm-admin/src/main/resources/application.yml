@@ -1,21 +1,20 @@
 spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/postgres
-    username: postgres
-    password: Zl830013
+    username: ${username}
+    password: ${password}
     driver-class-name: org.postgresql.Driver
     hikari:
       maximum-pool-size: 20
       minimum-idle: 5
   profiles:
     active: dev
-
-mybatis-plus:
-  configuration:
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
-
-logging:
-  level:
-    org.postgresql: DEBUG
-    org.springframework.jdbc: DEBUG
-    com.zaxxer.hikari: DEBUG
+jwt:
+  # JWT 密钥（至少 32 字符 = 256 位）
+  secretKey: tms-xie-secret-key-2026-must-be-at-least-256-bits-long
+  # 访问令牌有效期：1 小时（毫秒）
+  accessTokenExpiration: 3600000
+  # 刷新令牌有效期：7 天（毫秒）
+  refreshTokenExpiration: 604800000
+  # 自动刷新阈值：当 token 剩余时间小于 5 分钟时自动刷新（毫秒）
+  autoRefreshThreshold: 300000

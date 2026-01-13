@@ -25,7 +25,7 @@ public class LogAspect {
     /**
      * 切点
      */
-    @Pointcut("execution(* com.xie.controller..*.*(..))")
+    @Pointcut("execution(* com.xie.*.controller..*.*(..))")
     public void logPointCut() {
     }
 
